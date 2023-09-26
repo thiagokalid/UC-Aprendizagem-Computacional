@@ -21,7 +21,7 @@ def k_means_clustering(X, k):
     # Compute the initial guess for the centroids:
     centroids = mac_queen_initialisation(X, k=k)
     iter = 0
-    for i in range(100):  # 100 is just a magical number to guarantee non-infinite loop.
+    for i in range(100):  # 100 is an upper-bound for the iterations.
         iter += 1
         # Compute the distance between each point and each centroid:
         point2centroid_dist = cdist(X, centroids)
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     X, _ = simulated_dataset()
 
     # Select the number of clusters:
-    k = 3
+    k = 12
 
     # Compute the clusters centroids:
     centroids, ownership, max_iter = k_means_clustering(X, k)
